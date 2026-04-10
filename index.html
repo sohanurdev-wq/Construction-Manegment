@@ -109,8 +109,8 @@
         </div>
 
         <button onclick="openModal('projectModal')" class="glass px-10 py-4 rounded-full text-white font-bold flex items-center gap-3 mx-auto border-yellow-500/30 hover:border-yellow-500 transition-all uppercase tracking-widest text-sm">
-            <span class="material-symbols-rounded text-[#D4AF37]">assignment</span>
-            চলমান প্রজেক্ট সমূহ
+            <span class="material-symbols-rounded text-[#D4AF37]">হ্যান্ড  ওভার </span>
+            ও চলমান প্রজেক্ট তালিকা
         </button>
     </main>
 
@@ -266,7 +266,7 @@
 
         const slides = document.querySelectorAll('.slide');
         let current = 0;
-        setInterval(() => { slides[current].classList.remove('active'); current = (current + 1) % slides.length; slides[current].classList.add('active'); }, 5000);
+        setInterval(() => { slides[current].classList.remove('active'); current = (current + 1) % slides.length; slides[current].classList.add('active'); }, 2500);
         
         window.onload = fetchSheetData;
     </script>
