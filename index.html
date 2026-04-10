@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sohanur Construction & Manpower Solution</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,fill,GRAD@24,400,1,0" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Outfit:wght@600;800;900&display=swap');
+        
+        :root { --gold: #D4AF37; --bg: #050505; }
+        body { font-family: 'Hind Siliguri', sans-serif; background-color: var(--bg); color: white; scroll-behavior: smooth; }
+
+        .slider-bg { position: fixed; inset: 0; z-index: -2; filter: brightness(0.3); }
+        .slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 2s ease-in-out; }
+        .slide.active { opacity: 1; }
+
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; }
+        
+        .gold-btn {
+            background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+            transition: 0.4s;
+        }
+        .gold-btn:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3); }
+
+        .modal { display: none; position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,0.95); backdrop-filter: blur(15px); align-items: center; justify-content: center; overflow-y: auto; padding: 20px; }
+        
+        .wa-float { position: fixed; bottom: 40px; right: 20px; z-index: 1000; background: #25d366; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5); border: 2px solid white; }
+
+        input, select, textarea { width: 100%; background: rgba(255,255,255,0.05) !important; border: 1px solid rgba(255,255,255,0.1) !important; padding: 12px 16px; border-radius: 12px; outline: none; color: white; }
+        input:focus, select:focus { border-color: var(--gold) !important; }
+    </style>
+</head>
+<body>
+
+    <div class="slider-bg">
+        <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070')"></div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1503387762-592dee58c460?q=80&w=2070')"></div>
+    </div>
+
+    <a href="https://wa.me/message/RJDLJ2SEYHGRH1" target="_blank" class="wa-float">
+        <svg fill="currentColor" width="35" height="35" viewBox="0 0 24 24"><path d="M12.031 6.172c-2.32 0-4.519.905-6.16 2.547-3.4 3.401-3.4 8.931 0 12.332l1.134 1.134-1.134 4.137 4.237-1.113 1.124.664c1.57.928 3.355 1.418 5.18 1.418 5.514 0 10-4.486 10-10s-4.486-10-10-10zm0 18.2c-1.748 0-3.391-.426-4.842-1.188l-3.473.911 1.019-3.715c-1.243-1.531-1.992-3.488-1.992-5.61 0-4.963 4.037-9 9-9s9 4.037 9 9-4.037 9-9 9z"/></svg>
+    </a>
+
+    <nav class="fixed w-full z-50 p-4 md:p-6 flex justify-between items-center">
+        <div class="glass px-4 py-2 flex items-center gap-3">
+            <img src="logo.png" alt="Logo" class="w-10 h-10 object-contain rounded-md bg-white/5">
+            <div class="flex flex-col">
+                <span class="font-black text-sm md:text-xl Outfit uppercase">Sohanur <span class="text-[#D4AF37]">Construction</span></span>
+                <span class="text-[8px] md:text-[10px] font-bold text-gray-400 tracking-widest uppercase">& Manpower Solution</span>
+            </div>
+        </div>
+        <div class="flex gap-2">
+            <button onclick="shareWebsite()" class="glass w-10 h-10 rounded-full flex items-center justify-center text-white hover:text-[#D4AF37]">
+                <span class="material-symbols-rounded">share</span>
+            </button>
+            <a href="tel:+8801805090910" class="gold-btn w-10 h-10 rounded-full flex items-center justify-center text-black">
+                <span class="material-symbols-rounded">call</span>
+            </a>
+        </div>
+    </nav>
+
+    <main class="relative z-10 px-6 pt-40 text-center pb-20">
+        <div class="mb-6">
+            <span class="text-[#D4AF37] font-bold tracking-[0.3em] uppercase text-xs md:text-sm">নির্ভরযোগ্যতা ও আস্থার প্রতীক</span>
+        </div>
+        <h1 class="text-4xl md:text-7xl font-black mb-6 Outfit uppercase leading-tight">নির্মাণ শিল্পে এক <br><span class="text-[#D4AF37] italic">Modern</span> বিপ্লব</h1>
+        <p id="site-desc" class="text-gray-300 max-w-2xl mx-auto mb-12 text-lg md:text-xl leading-relaxed">
+            আমরা সরবরাহ করি দক্ষ কারিগর এবং আধুনিক নির্মাণ সমাধান, যা আপনার প্রজেক্টের মান ও গতি নিশ্চিত করে। আপনার স্বপ্ন নির্মাণে আমরা আছি আপনার পাশে।
+        </p>
+        
+        <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            <button onclick="openModal('manpowerModal')" class="gold-btn py-5 rounded-2xl text-black font-bold text-xl uppercase tracking-wide">ম্যানপাওয়ার নিন</button>
+            <button onclick="openModal('workerModal')" class="glass py-5 rounded-2xl text-white font-bold text-xl uppercase border-white/20 tracking-wide">কাজ করতে চাই</button>
+        </div>
+    </main>
+
+    <div id="manpowerModal" class="modal">
+        <div class="glass w-full max-w-2xl p-8 relative overflow-y-auto max-h-[90vh]">
+            <button onclick="closeModal('manpowerModal')" class="absolute top-4 right-6 text-white text-3xl">✕</button>
+            <h2 class="text-2xl font-black mb-6 text-[#D4AF37] border-b border-white/10 pb-4 uppercase">ম্যানপাওয়ার রিকোয়েস্ট</h2>
+            <form class="grid gap-4 text-left" id="manpowerForm" onsubmit="handleManpowerSubmit(event)">
+                <div class="grid md:grid-cols-2 gap-4">
+                    <input type="text" name="comp_name" placeholder="কোম্পানির নাম" required>
+                    <input type="text" name="comp_addr" placeholder="কোম্পানির ঠিকানা" required>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <input type="tel" name="phone" placeholder="ফোন নম্বর" required>
+                    <input type="text" name="site_addr" placeholder="সাইটের ঠিকানা" required>
+                </div>
+                <select name="worker_type" required>
+                    <option value="" disabled selected>শ্রমিকের ধরণ নির্বাচন করুন</option>
+                    <option value="রাজমিস্ত্রি">রাজমিস্ত্রি</option>
+                    <option value="রড মিস্ত্রি">রড মিস্ত্রি</option>
+                    <option value="হেল্পার">হেল্পার</option>
+                    <option value="ফোরম্যান">ফোরম্যান</option>
+                    <option value="ওয়েল্ডার">ওয়েল্ডার</option>
+                    <option value="ফিটার">ফিটার</option>
+                </select>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <input type="number" name="worker_count" placeholder="কতজন লোক লাগবে?">
+                    <input type="text" name="duration" placeholder="প্রজেক্টের সময়কাল">
+                </div>
+                <textarea name="more_info" rows="3" placeholder="অতিরিক্ত কোনো তথ্য..."></textarea>
+                <button type="submit" id="btn-m" class="gold-btn py-4 rounded-xl text-black font-black uppercase text-lg mt-2">অর্ডার সাবমিট করুন</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="workerModal" class="modal">
+        <div class="glass w-full max-w-xl p-8 relative">
+            <button onclick="closeModal('workerModal')" class="absolute top-4 right-6 text-white text-3xl">✕</button>
+            <h2 class="text-2xl font-black mb-6 text-white border-b border-white/10 pb-4 uppercase">শ্রমিক রেজিস্ট্রেশন</h2>
+            <form class="grid gap-4 text-left" id="workerForm" onsubmit="handleWorkerSubmit(event)">
+                <input type="text" name="w_name" placeholder="আপনার নাম" required>
+                <input type="tel" name="w_phone" placeholder="মোবাইল নম্বর" required>
+                <input type="text" name="w_addr" placeholder="আপনার বর্তমান ঠিকানা" required>
+                <input type="text" name="w_exp" placeholder="কাজের অভিজ্ঞতা (কত বছর?)">
+                <select name="w_skill" required>
+                    <option value="" disabled selected>আপনার কাজ কি?</option>
+                    <option value="রাজমিস্ত্রি">রাজমিস্ত্রি</option>
+                    <option value="রড মিস্ত্রি">রড মিস্ত্রি</option>
+                    <option value="হেল্পার">হেল্পার</option>
+                    <option value="ফোরম্যান">ফোরম্যান</option>
+                    <option value="ওয়েল্ডার">ওয়েল্ডার</option>
+                    <option value="ফিটার">ফিটার</option>
+                </select>
+                <button type="submit" id="btn-w" class="bg-white text-black py-4 rounded-xl font-black uppercase text-lg mt-2 transition-all">আবেদন করুন</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="py-20 text-center border-t border-white/10">
+        <h3 class="text-xl md:text-3xl font-black text-[#D4AF37] uppercase mb-4">Sohanur Construction & Manpower Solution</h3>
+        <p class="text-gray-400 mb-8 font-bold tracking-widest uppercase">PROPRIETOR: MD. SOHANUR RAHMAN SOHAN</p>
+        <div class="flex flex-col gap-2 text-sm text-gray-400">
+            <p>📞 01805-090910, 01805-090950</p>
+            <p>📍 নওগাঁ সদর, নওগাঁ, বাংলাদেশ</p>
+        </div>
+    </footer>
+
+    <script>
+        // Telegram Configuration
+        const botToken = "8037861551:AAGCdukJlMoh0LeTuJ8nAasAu_BK4e8S9Vs"; // Replace with your Bot Token
+        const chatId = "8329392163";     // Replace with your Chat ID
+
+        function openModal(id) { document.getElementById(id).style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+        function closeModal(id) { document.getElementById(id).style.display = 'none'; document.body.style.overflow = 'auto'; }
+
+        // Share Function
+        async function shareWebsite() {
+            const shareData = {
+                title: 'Sohanur Construction & Manpower Solution',
+                text: document.getElementById('site-desc').innerText,
+                url: window.location.href
+            };
+            try {
+                if (navigator.share) {
+                    await navigator.share(shareData);
+                } else {
+                    navigator.clipboard.writeText(window.location.href);
+                    alert('লিঙ্কটি কপি করা হয়েছে!');
+                }
+            } catch (err) { console.log(err); }
+        }
+
+        // Send to Telegram
+        async function sendToTelegram(message) {
+            const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ chat_id: chatId, text: message, parse_mode: 'Markdown' })
+                });
+                if (response.ok) {
+                    alert('আপনার তথ্য সফলভাবে পাঠানো হয়েছে!');
+                }
+            } catch (error) {
+                alert('দুঃখিত, তথ্য পাঠানো সম্ভব হয়নি। আবার চেষ্টা করুন।');
+            }
+        }
+
+        // Manpower Submit
+        function handleManpowerSubmit(e) {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            let msg = `🏢 *নতুন ম্যানপাওয়ার রিকোয়েস্ট*\n\n`;
+            msg += `👤 কোম্পানি: ${formData.get('comp_name')}\n`;
+            msg += `📍 ঠিকানা: ${formData.get('comp_addr')}\n`;
+            msg += `📞 ফোন: ${formData.get('phone')}\n`;
+            msg += `🏗️ সাইট: ${formData.get('site_addr')}\n`;
+            msg += `👷 শ্রমিকের ধরন: ${formData.get('worker_type')}\n`;
+            msg += `🔢 সংখ্যা: ${formData.get('worker_count')}\n`;
+            msg += `⏳ সময়কাল: ${formData.get('duration')}\n`;
+            msg += `📝 তথ্য: ${formData.get('more_info')}`;
+            
+            sendToTelegram(msg);
+            e.target.reset();
+            closeModal('manpowerModal');
+        }
+
+        // Worker Submit
+        function handleWorkerSubmit(e) {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            let msg = `👷 *নতুন শ্রমিক রেজিস্ট্রেশন*\n\n`;
+            msg += `👤 নাম: ${formData.get('w_name')}\n`;
+            msg += `📞 ফোন: ${formData.get('w_phone')}\n`;
+            msg += `📍 ঠিকানা: ${formData.get('w_addr')}\n`;
+            msg += `🎓 অভিজ্ঞতা: ${formData.get('w_exp')}\n`;
+            msg += `🛠️ দক্ষতা: ${formData.get('w_skill')}`;
+
+            sendToTelegram(msg);
+            e.target.reset();
+            closeModal('workerModal');
+        }
+
+        // Slider
+        const slides = document.querySelectorAll('.slide');
+        let current = 0;
+        setInterval(() => { slides[current].classList.remove('active'); current = (current + 1) % slides.length; slides[current].classList.add('active'); }, 5000);
+    </script>
+</body>
+          </html>
